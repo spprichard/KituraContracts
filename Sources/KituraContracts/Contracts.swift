@@ -302,7 +302,7 @@ public enum IdentifierError: Error {
 public protocol Identifier {
     /// Creates an identifier from a given string value.
     /// - Throws: An IdentifierError.invalidValue if the given string is not a valid representation.
-    init(value: String) throws
+    init?(value: String) throws
 
     /// The string representation of the identifier.
     var value: String { get }
@@ -313,7 +313,7 @@ public protocol Identifier {
  */
 extension String: Identifier {
     /// Creates a string identifier from a given string value.
-    public init(value: String) {
+    public init?(value: String) {
         self.init(value)
     }
 
